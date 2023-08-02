@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isOn = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.backgroundBlue
+                .ignoresSafeArea(.all)
+            
+            Toggle("", isOn: $isOn)
+                .toggleStyle(EggToggleStyle())
         }
-        .padding()
     }
 }
 
